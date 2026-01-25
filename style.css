@@ -79,7 +79,7 @@ body {
 
 /* Screen */
 .screen {
-    width: 640px;
+    width: 780px;
     max-width: 100%;
     background: var(--black);
     font-family: 'Courier New', 'Consolas', monospace;
@@ -87,6 +87,86 @@ body {
     line-height: 1.3;
     position: relative;
     overflow: hidden;
+}
+
+/* BBC DANFAX Banner */
+.bbc-banner {
+    background: var(--blue);
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.bbc-blocks {
+    display: flex;
+    gap: 2px;
+}
+
+.bbc-block {
+    background: var(--white);
+    padding: 2px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bbc-letter {
+    font-size: 8px;
+    line-height: 1;
+    color: var(--black);
+    font-weight: bold;
+    margin: 0;
+}
+
+.danfax-logo {
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--cyan);
+    font-weight: bold;
+}
+
+/* Page counter - shows in header when navigating */
+.page-counter {
+    display: none;
+    background: var(--red);
+    color: var(--yellow);
+    padding: 2px 6px;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+.page-counter::before {
+    content: 'P';
+    color: var(--white);
+}
+
+.page-counter.active {
+    display: inline;
+}
+
+.header-date {
+    color: var(--white);
+}
+
+/* Globe graphic */
+.globe-container {
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    opacity: 0.7;
+}
+
+.globe-art {
+    font-size: 9px;
+    line-height: 1;
+    color: var(--cyan);
+    margin: 0;
+}
+
+.content-with-globe {
+    position: relative;
 }
 
 /* Phosphor glow effect */
@@ -191,7 +271,9 @@ body {
 /* Content */
 .content {
     padding: 8px;
-    min-height: 450px;
+    min-height: 520px;
+    height: 520px;
+    overflow-y: auto;
 }
 
 /* Block art / graphics */
@@ -368,7 +450,8 @@ body {
 
 /* Airbnb listings */
 .airbnb-content {
-    min-height: 480px;
+    min-height: 520px;
+    height: 520px;
 }
 
 .airbnb-listing {
@@ -562,6 +645,26 @@ a.cyan.link:hover {
 }
 
 /* Responsive */
+@media (max-width: 820px) {
+    .screen {
+        width: 100%;
+    }
+
+    .bbc-banner {
+        flex-direction: column;
+        gap: 5px;
+        padding: 5px 8px;
+    }
+
+    .bbc-logo, .danfax-logo {
+        font-size: 7px;
+    }
+
+    .globe-container {
+        display: none;
+    }
+}
+
 @media (max-width: 700px) {
     .crt {
         padding: 15px;
@@ -614,6 +717,10 @@ a.cyan.link:hover {
 
     .content {
         min-height: auto;
+    }
+
+    .bbc-logo, .danfax-logo {
+        font-size: 6px;
     }
 
     .calendar-row {
