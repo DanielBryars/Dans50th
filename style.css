@@ -1,0 +1,728 @@
+/* Authentic CEEFAX Teletext Style */
+
+@font-face {
+    font-family: 'Teletext';
+    src: local('Courier New'), local('Consolas'), local('monospace');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #000000;
+    --white: #FFFFFF;
+    --red: #FF0000;
+    --green: #00FF00;
+    --yellow: #FFFF00;
+    --blue: #0000FF;
+    --magenta: #FF00FF;
+    --cyan: #00FFFF;
+}
+
+body {
+    background: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* CRT Monitor effect */
+.crt {
+    position: relative;
+    background: #000;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow:
+        0 0 100px rgba(0, 255, 255, 0.3),
+        inset 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.crt::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 15px;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 50%
+    );
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Scanlines */
+.scanlines {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events: none;
+    z-index: 50;
+}
+
+/* Screen */
+.screen {
+    width: 640px;
+    max-width: 100%;
+    background: var(--black);
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 16px;
+    line-height: 1.3;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Phosphor glow effect */
+.screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+    pointer-events: none;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4px;
+    background: var(--black);
+    font-weight: bold;
+}
+
+.page-num {
+    background: var(--red);
+    color: var(--white);
+    padding: 2px 6px;
+}
+
+.ceefax-title {
+    color: var(--yellow);
+    letter-spacing: 4px;
+    font-size: 1.2em;
+}
+
+.subpage {
+    color: var(--white);
+}
+
+.time {
+    color: var(--cyan);
+}
+
+/* Page input box - type a page number */
+.page-input-box {
+    display: flex;
+    align-items: center;
+    background: var(--red);
+    padding: 2px 4px;
+}
+
+.page-p {
+    color: var(--white);
+    font-weight: bold;
+}
+
+.page-input {
+    width: 38px;
+    background: var(--red);
+    border: none;
+    color: var(--white);
+    font-family: inherit;
+    font-size: 1em;
+    text-align: center;
+    padding: 0;
+    font-weight: bold;
+}
+
+.page-input:focus {
+    outline: none;
+    color: var(--yellow);
+}
+
+.page-input.invalid {
+    color: var(--black);
+    animation: shake 0.3s;
+}
+
+.page-hint {
+    color: var(--white);
+    opacity: 0.3;
+    font-size: 0.7em;
+    margin-left: 2px;
+}
+
+.page-input:focus + .page-hint {
+    opacity: 0.6;
+    color: var(--yellow);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Content */
+.content {
+    padding: 8px;
+    min-height: 450px;
+}
+
+/* Block art / graphics */
+.graphic {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.block-art {
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: 2px;
+}
+
+/* Double height text - the classic CEEFAX look */
+.dbl-height-block {
+    text-align: center;
+    padding: 4px 0;
+    margin: 4px 0;
+}
+
+.dbl-height {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: inline-block;
+    transform: scaleY(1.4);
+    transform-origin: center;
+}
+
+/* Text colors */
+.white { color: var(--white); }
+.red { color: var(--red); }
+.green { color: var(--green); }
+.yellow { color: var(--yellow); }
+.blue { color: var(--blue); }
+.magenta { color: var(--magenta); }
+.cyan { color: var(--cyan); }
+.black-text { color: var(--black); }
+
+/* Background colors */
+.red-bg { background-color: var(--red); color: var(--white); }
+.green-bg { background-color: var(--green); color: var(--black); }
+.yellow-bg { background-color: var(--yellow); color: var(--black); }
+.blue-bg { background-color: var(--blue); color: var(--white); }
+.magenta-bg { background-color: var(--magenta); color: var(--white); }
+.cyan-bg { background-color: var(--cyan); color: var(--black); }
+
+/* Info row */
+.info-row {
+    text-align: center;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+}
+
+/* Text blocks */
+.text-block {
+    margin: 8px 4px;
+}
+
+.text-block p {
+    margin: 3px 0;
+}
+
+.text-block.center {
+    text-align: center;
+}
+
+/* Spacer */
+.spacer {
+    height: 10px;
+}
+
+/* Divider */
+.divider {
+    color: var(--white);
+    opacity: 0.5;
+    text-align: center;
+    margin: 8px 0;
+    overflow: hidden;
+}
+
+/* Sections for stay page */
+.section {
+    margin: 8px 0;
+}
+
+.section-header {
+    display: inline-block;
+    padding: 2px 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.listing {
+    margin: 6px 0 10px 8px;
+}
+
+.listing p {
+    margin: 2px 0;
+    font-size: 0.95em;
+}
+
+/* Blinking text - authentic teletext flash */
+.blink {
+    animation: teletext-flash 1s step-end infinite;
+}
+
+.blink-slow {
+    animation: teletext-flash 1.5s step-end infinite;
+}
+
+@keyframes teletext-flash {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+/* Fastext buttons - the colored buttons at bottom */
+.fastext {
+    display: flex;
+    gap: 0;
+    border-top: 2px solid var(--white);
+    margin-top: 10px;
+}
+
+.fastext-btn {
+    flex: 1;
+    text-align: center;
+    padding: 6px 4px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+}
+
+.fastext-btn:hover {
+    filter: brightness(1.3);
+}
+
+/* Flicker effect for extra authenticity */
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    92% { opacity: 1; }
+    93% { opacity: 0.8; }
+    94% { opacity: 1; }
+}
+
+.screen {
+    animation: flicker 4s infinite;
+}
+
+/* Moving scanline */
+.crt::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30px;
+    right: 30px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    animation: scanline-move 8s linear infinite;
+    pointer-events: none;
+    z-index: 60;
+}
+
+@keyframes scanline-move {
+    0% { top: 30px; }
+    100% { top: calc(100% - 30px); }
+}
+
+/* Airbnb listings */
+.airbnb-content {
+    min-height: 480px;
+}
+
+.airbnb-listing {
+    margin: 8px 0;
+}
+
+.listing-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.block-pic {
+    flex-shrink: 0;
+}
+
+.tiny-art {
+    font-size: 11px;
+    line-height: 1.0;
+    margin: 0;
+    letter-spacing: 0;
+}
+
+.listing-info {
+    flex: 1;
+}
+
+.listing-info p {
+    margin: 1px 0;
+    font-size: 0.9em;
+}
+
+.listing-title {
+    font-weight: bold;
+    font-size: 1em !important;
+}
+
+.listing-link {
+    font-size: 0.85em;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+.center {
+    text-align: center;
+}
+
+.small-text {
+    font-size: 0.85em;
+}
+
+/* Email link styling */
+.email-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.email-link {
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+.copy-btn {
+    background: var(--cyan);
+    color: var(--black);
+    border: none;
+    padding: 4px 8px;
+    font-family: inherit;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.copy-btn:hover {
+    background: var(--yellow);
+}
+
+.copy-btn.copied {
+    background: var(--green);
+}
+
+/* Links */
+a.magenta {
+    text-decoration: none;
+}
+
+a.magenta:hover {
+    text-decoration: underline;
+}
+
+a.link {
+    text-decoration: none;
+}
+
+a.link:hover {
+    text-decoration: underline;
+}
+
+a.cyan.link {
+    color: var(--cyan);
+}
+
+a.cyan.link:hover {
+    color: var(--yellow);
+}
+
+/* Page index - clickable page numbers */
+.page-index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 0;
+    border-top: 1px dashed rgba(255,255,255,0.3);
+}
+
+.idx {
+    background: var(--black);
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    padding: 2px 6px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.idx:hover {
+    background: var(--cyan);
+    color: var(--black);
+}
+
+.idx.active {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--black);
+}
+
+/* Fastext page numbers */
+.fnum {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-right: 2px;
+}
+
+/* Calendar row */
+.calendar-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 8px 0;
+    flex-wrap: wrap;
+}
+
+.cal-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 4px;
+}
+
+.cal-btn:hover {
+    filter: brightness(1.3);
+}
+
+.cal-icon {
+    font-size: 10px;
+    line-height: 1;
+    margin: 0;
+}
+
+.cal-label {
+    font-size: 10px;
+    color: var(--white);
+    margin-top: 2px;
+}
+
+/* Tagline */
+.tagline {
+    text-align: center;
+    padding: 10px 0 5px 0;
+    font-size: 0.85em;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .crt {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .screen {
+        font-size: 14px;
+    }
+
+    .dbl-height {
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+
+    .block-art {
+        font-size: 12px;
+        letter-spacing: 0;
+    }
+
+    .scanlines {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .header {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .ceefax-title {
+        font-size: 1em;
+        letter-spacing: 2px;
+    }
+
+    .listing-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .block-pic {
+        display: none;
+    }
+
+    .tiny-art {
+        font-size: 9px;
+    }
+
+    .content {
+        min-height: auto;
+    }
+
+    .calendar-row {
+        gap: 8px;
+    }
+
+    .cal-icon {
+        font-size: 9px;
+    }
+
+    .page-index {
+        gap: 4px;
+        flex-wrap: wrap;
+    }
+
+    .idx {
+        font-size: 0.8em;
+        padding: 2px 4px;
+    }
+
+    .fnum {
+        display: none;
+    }
+
+    .page-input {
+        width: 40px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 5px;
+    }
+
+    .crt {
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    .screen {
+        font-size: 12px;
+    }
+
+    .dbl-height {
+        font-size: 18px;
+        letter-spacing: 1px;
+        transform: scaleY(1.2);
+    }
+
+    .block-art {
+        font-size: 10px;
+    }
+
+    .fastext-btn {
+        font-size: 10px;
+        padding: 6px 2px;
+        letter-spacing: 0;
+    }
+
+    .header {
+        padding: 4px 2px;
+    }
+
+    .page-num, .subpage, .time {
+        font-size: 0.9em;
+    }
+
+    .email-link {
+        font-size: 0.95em;
+    }
+
+    .copy-btn {
+        padding: 3px 6px;
+        font-size: 0.9em;
+    }
+
+    .listing p, .listing-info p {
+        font-size: 0.85em;
+    }
+
+    .calendar-row {
+        gap: 6px;
+    }
+
+    .cal-btn {
+        padding: 2px;
+    }
+
+    .tagline {
+        font-size: 0.75em;
+    }
+
+    .page-index {
+        padding: 4px 0;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 320px) {
+    .screen {
+        font-size: 11px;
+    }
+
+    .dbl-height {
+        font-size: 14px;
+    }
+
+    .fastext-btn {
+        font-size: 9px;
+    }
+}

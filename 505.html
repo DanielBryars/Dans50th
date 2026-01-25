@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEEFAX 505 - Taxis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="crt">
+        <div class="scanlines"></div>
+        <div class="screen">
+            <!-- Header bar -->
+            <div class="header">
+                <div class="page-input-box">
+                    <span class="page-p">P</span><input type="text" id="page-input" maxlength="3" value="505" class="page-input"><span class="page-hint">&#x25C0;</span>
+                </div>
+                <span class="ceefax-title">CEEFAX</span>
+                <span class="time" id="clock">00:00:00</span>
+            </div>
+
+            <!-- Main content -->
+            <div class="content">
+                <!-- Double height title -->
+                <div class="dbl-height-block yellow-bg">
+                    <span class="dbl-height black-text">LOCAL TAXIS</span>
+                </div>
+
+                <div class="spacer"></div>
+
+                <!-- Taxi graphic -->
+                <div class="graphic">
+<pre class="block-art yellow">      ┌──────┐
+   ┌──┤ TAXI ├──┐
+   │  └──────┘  │
+<span class="white">┌──┴────────────┴──┐</span>
+<span class="white">│ </span><span class="cyan">▓▓</span><span class="white"> │▓▓▓▓▓▓▓▓│ </span><span class="cyan">▓▓</span><span class="white"> │</span>
+<span class="white">└──●──┴────────┴──●─┘</span></pre>
+                </div>
+
+                <div class="section">
+                    <div class="section-header cyan-bg black-text">&#x260E; LOCAL CABS</div>
+
+                    <div class="listing">
+                        <p><span class="cyan">&#x25B6; </span><a href="https://excelsiortaxis.co.uk/" target="_blank" class="cyan link">Excelsior Taxis</a></p>
+                        <p><span class="white">  Chipping Norton's largest</span></p>
+                        <p><span class="green">  Tel: </span><span class="yellow">01608 643721</span></p>
+                    </div>
+
+                    <div class="listing">
+                        <p><span class="cyan">&#x25B6; </span><a href="https://charlburytaxis.com/" target="_blank" class="cyan link">Charlbury Taxis</a></p>
+                        <p><span class="white">  Local family firm, 7am-11pm</span></p>
+                        <p><span class="green">  Tel: </span><span class="yellow">07855 806102</span></p>
+                    </div>
+
+                    <div class="listing">
+                        <p><span class="cyan">&#x25B6; </span><a href="http://blenheimtaxis.com/" target="_blank" class="cyan link">Blenheim Taxis</a></p>
+                        <p><span class="white">  Charlbury based, UK-wide</span></p>
+                        <p><span class="green">  Tel: </span><span class="yellow">07773 000444</span></p>
+                    </div>
+
+                    <div class="listing">
+                        <p><span class="cyan">&#x25B6; </span><a href="https://charlburytaxi.co.uk/" target="_blank" class="cyan link">Woody's Taxi</a></p>
+                        <p><span class="white">  From 5am, Charlbury Station</span></p>
+                        <p><span class="green">  Tel: </span><span class="yellow">07733 300808</span></p>
+                    </div>
+
+                    <div class="listing">
+                        <p><span class="cyan">&#x25B6; Pete's Taxi</span></p>
+                        <p><span class="white">  Charlbury area</span></p>
+                        <p><span class="green">  Tel: </span><span class="yellow">07854 179673</span></p>
+                    </div>
+                </div>
+
+                <div class="spacer"></div>
+
+                <div class="text-block center">
+                    <p class="magenta">Book ahead for late night pickups!</p>
+                </div>
+
+                <div class="tagline">
+                    <span class="magenta">Dan's 50th:</span> <span class="white">The party at your fingertips</span>
+                </div>
+
+            </div>
+
+            <!-- Page index -->
+            <div class="page-index">
+                <span class="white">Pages:</span>
+                <a href="501.html" class="idx">501</a>
+                <a href="502.html" class="idx">502</a>
+                <a href="503.html" class="idx">503</a>
+                <a href="504.html" class="idx">504</a>
+                <a href="505.html" class="idx active">505</a>
+            </div>
+
+            <!-- Fastext navigation -->
+            <div class="fastext">
+                <a href="501.html" class="fastext-btn red-bg"><span class="fnum">501</span> Party</a>
+                <a href="502.html" class="fastext-btn green-bg"><span class="fnum">502</span> Stay</a>
+                <a href="504.html" class="fastext-btn yellow-bg black-text"><span class="fnum">504</span> Food</a>
+                <a href="505.html" class="fastext-btn cyan-bg black-text"><span class="fnum">505</span> Taxis</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="ceefax.js"></script>
+</body>
+</html>

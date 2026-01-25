@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEEFAX 503 - Airbnb Stays</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="crt">
+        <div class="scanlines"></div>
+        <div class="screen">
+            <!-- Header bar -->
+            <div class="header">
+                <div class="page-input-box">
+                    <span class="page-p">P</span><input type="text" id="page-input" maxlength="3" value="503" class="page-input"><span class="page-hint">&#x25C0;</span>
+                </div>
+                <span class="ceefax-title">CEEFAX</span>
+                <span class="time" id="clock">00:00:00</span>
+            </div>
+
+            <!-- Main content -->
+            <div class="content airbnb-content">
+                <!-- Double height title -->
+                <div class="dbl-height-block magenta-bg">
+                    <span class="dbl-height white">AIRBNB STAYS</span>
+                </div>
+                <p class="center white">All in Chadlington village</p>
+
+                <div class="spacer"></div>
+
+                <!-- Listing 1: The Studio at Sandys House -->
+                <div class="airbnb-listing">
+                    <div class="listing-row">
+                        <div class="block-pic">
+<pre class="tiny-art">
+<span class="yellow">┌─────────┐</span>
+<span class="yellow">│</span><span class="green">▓▓</span><span class="cyan">░░░</span><span class="green">▓▓</span><span class="yellow">│</span>
+<span class="yellow">│</span><span class="white">█</span><span class="cyan">▒▒▒</span><span class="white">█</span><span class="green">▓▓</span><span class="yellow">│</span>
+<span class="yellow">│</span><span class="white">█</span><span class="cyan">▒▒▒</span><span class="white">█</span><span class="green">▓▓</span><span class="yellow">│</span>
+<span class="green">└▀▀▀▀▀▀▀▀▀┘</span>
+</pre>
+                        </div>
+                        <div class="listing-info">
+                            <p><a href="https://www.airbnb.co.uk/rooms/31344734" target="_blank" class="cyan listing-title link">The Studio at Sandys House</a></p>
+                            <p class="white">Grade II listed garden studio</p>
+                            <p class="yellow">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; 4.98 (265 reviews)</p>
+                            <p class="green">2 guests &#x2022; Kitchen &#x2022; WiFi</p>
+                            <p class="white">Perfect for artists & writers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+
+                <!-- Listing 2: Cotswold Barn -->
+                <div class="airbnb-listing">
+                    <div class="listing-row">
+                        <div class="block-pic">
+<pre class="tiny-art">
+<span class="yellow">   /&#x203E;&#x203E;&#x203E;&#x203E;&#x203E;\  </span>
+<span class="yellow">  /</span><span class="red">▓▓▓▓▓▓▓</span><span class="yellow">\ </span>
+<span class="yellow"> /</span><span class="red">▓▓▓▓▓▓▓▓▓</span><span class="yellow">\</span>
+<span class="white">│</span><span class="cyan">░░</span><span class="white">│</span><span class="yellow">▓▓▓</span><span class="white">│</span><span class="cyan">░░</span><span class="white">│</span>
+<span class="green">└▀▀▀▀▀▀▀▀▀▀▀┘</span>
+</pre>
+                        </div>
+                        <div class="listing-info">
+                            <p><a href="https://www.airbnb.co.uk/rooms/45706509" target="_blank" class="cyan listing-title link">Cotswold Barn</a></p>
+                            <p class="white">Quirky converted barn + yurt!</p>
+                            <p class="yellow">&#x2605;&#x2605;&#x2605;&#x2605;&#x2606; 4.82 (188 reviews)</p>
+                            <p class="green">4 guests &#x2022; 2 beds &#x2022; Unique</p>
+                            <p class="white">Near Clarkson's & Soho Farm</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</div>
+
+                <!-- Listing 3: Cotswold Cottage -->
+                <div class="airbnb-listing">
+                    <div class="listing-row">
+                        <div class="block-pic">
+<pre class="tiny-art">
+<span class="yellow">    /\</span>
+<span class="yellow">   /</span><span class="red">▓▓</span><span class="yellow">\</span>
+<span class="yellow">  /</span><span class="red">▓▓▓▓</span><span class="yellow">\</span>
+<span class="white"> │</span><span class="cyan">░░</span><span class="yellow">▓▓</span><span class="cyan">░░</span><span class="white">│</span>
+<span class="white"> │</span><span class="yellow">▓▓</span><span class="white">██</span><span class="yellow">▓▓</span><span class="white">│</span>
+<span class="green">└▀▀▀▀▀▀▀▀┘</span>
+</pre>
+                        </div>
+                        <div class="listing-info">
+                            <p><a href="https://www.airbnb.co.uk/rooms/14964950" target="_blank" class="cyan listing-title link">Cotswold Cottage</a></p>
+                            <p class="white">Traditional stone cottage</p>
+                            <p class="yellow">&#x2605;&#x2605;&#x2605;&#x2605;&#x2606; 4.77 (586 reviews)</p>
+                            <p class="green">Central village location</p>
+                            <p class="white">Walk to shops, deli & pub</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spacer"></div>
+
+                <div class="tagline">
+                    <span class="magenta">Dan's 50th:</span> <span class="white">The party at your fingertips</span>
+                </div>
+
+            </div>
+
+            <!-- Page index -->
+            <div class="page-index">
+                <span class="white">Pages:</span>
+                <a href="501.html" class="idx">501</a>
+                <a href="502.html" class="idx">502</a>
+                <a href="503.html" class="idx active">503</a>
+                <a href="504.html" class="idx">504</a>
+                <a href="505.html" class="idx">505</a>
+            </div>
+
+            <!-- Fastext navigation -->
+            <div class="fastext">
+                <a href="501.html" class="fastext-btn red-bg"><span class="fnum">501</span> Party</a>
+                <a href="502.html" class="fastext-btn green-bg"><span class="fnum">502</span> Stay</a>
+                <a href="504.html" class="fastext-btn yellow-bg black-text"><span class="fnum">504</span> Food</a>
+                <a href="505.html" class="fastext-btn cyan-bg black-text"><span class="fnum">505</span> Taxis</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="ceefax.js"></script>
+</body>
+</html>
