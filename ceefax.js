@@ -23,6 +23,7 @@ function updateClock() {
 }
 
 // Page counter animation - shows in header
+// Annoyingly counts up to 600 then lands on target
 function animateToPage(targetPage, callback) {
     const inputBox = document.querySelector('.page-input-box');
     const counter = document.getElementById('page-counter');
@@ -44,21 +45,25 @@ function animateToPage(targetPage, callback) {
     inputBox.style.display = 'none';
     counter.classList.add('active');
 
-    const step = currentPage < target ? 1 : -1;
+    // Count from current up to 600
+    const totalSteps = 600 - currentPage;
+    const speed = Math.floor(3000 / totalSteps);
+
     let current = currentPage;
-    const speed = 50; // ms between numbers
 
     function tick() {
         counter.textContent = current;
 
-        if (current === target) {
+        if (current >= 600) {
+            // Hit 600, now show target and go
+            counter.textContent = target;
             setTimeout(() => {
                 callback();
-            }, 150);
+            }, 100);
             return;
         }
 
-        current += step;
+        current++;
         setTimeout(tick, speed);
     }
 
@@ -130,8 +135,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Add click handlers to page index links
-    document.querySelectorAll('.idx, .fastext-btn').forEach(link => {
+    // Add click handlers to page index links (with slow animation)
+    document.querySelectorAll('.idx').forEach(link => {
         link.addEventListener('click', handlePageClick);
+    });
+
+    // Fastext buttons are instant - no animation
+    document.querySelectorAll('.fastext-btn').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            window.location.href = href;
+        });
     });
 });

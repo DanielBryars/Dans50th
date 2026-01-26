@@ -23,64 +23,24 @@
 }
 
 body {
-    background: #1a1a1a;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    background: var(--black);
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 16px;
 }
 
-/* CRT Monitor effect */
+/* CRT wrapper - minimal */
 .crt {
     position: relative;
-    background: #000;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow:
-        0 0 100px rgba(0, 255, 255, 0.3),
-        inset 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
-.crt::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    border-radius: 15px;
-    background: linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.1) 0%,
-        transparent 50%
-    );
-    pointer-events: none;
-    z-index: 100;
-}
-
-/* Scanlines */
-.scanlines {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    right: 30px;
-    bottom: 30px;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.3),
-        rgba(0, 0, 0, 0.3) 1px,
-        transparent 1px,
-        transparent 3px
-    );
-    pointer-events: none;
-    z-index: 50;
-}
 
 /* Screen */
 .screen {
     width: 780px;
-    max-width: 100%;
+    min-width: 780px;
+    margin: 0 auto;
     background: var(--black);
     font-family: 'Courier New', 'Consolas', monospace;
     font-size: 16px;
@@ -169,21 +129,6 @@ body {
     position: relative;
 }
 
-/* Phosphor glow effect */
-.screen::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-        ellipse at center,
-        transparent 0%,
-        rgba(0, 0, 0, 0.3) 100%
-    );
-    pointer-events: none;
-}
 
 /* Header */
 .header {
@@ -271,9 +216,7 @@ body {
 /* Content */
 .content {
     padding: 8px;
-    min-height: 520px;
-    height: 520px;
-    overflow-y: auto;
+    min-height: 580px;
 }
 
 /* Block art / graphics */
@@ -376,7 +319,6 @@ body {
 
 .listing p {
     margin: 2px 0;
-    font-size: 0.95em;
 }
 
 /* Blinking text - authentic teletext flash */
@@ -417,42 +359,8 @@ body {
     filter: brightness(1.3);
 }
 
-/* Flicker effect for extra authenticity */
-@keyframes flicker {
-    0%, 100% { opacity: 1; }
-    92% { opacity: 1; }
-    93% { opacity: 0.8; }
-    94% { opacity: 1; }
-}
-
-.screen {
-    animation: flicker 4s infinite;
-}
-
-/* Moving scanline */
-.crt::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 30px;
-    right: 30px;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.1);
-    animation: scanline-move 8s linear infinite;
-    pointer-events: none;
-    z-index: 60;
-}
-
-@keyframes scanline-move {
-    0% { top: 30px; }
-    100% { top: calc(100% - 30px); }
-}
 
 /* Airbnb listings */
-.airbnb-content {
-    min-height: 520px;
-    height: 520px;
-}
 
 .airbnb-listing {
     margin: 8px 0;
@@ -481,7 +389,6 @@ body {
 
 .listing-info p {
     margin: 1px 0;
-    font-size: 0.9em;
 }
 
 .listing-title {
