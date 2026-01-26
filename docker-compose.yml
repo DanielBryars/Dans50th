@@ -1,0 +1,16 @@
+version: '3'
+services:
+  dans50th:
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - DOMAIN=your-domain.com
+      - EMAIL=your-email@example.com
+    volumes:
+      - letsencrypt:/etc/letsencrypt
+    restart: unless-stopped
+
+volumes:
+  letsencrypt:
