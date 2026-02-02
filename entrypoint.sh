@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DOMAIN=${DOMAIN:-example.com}
-EMAIL=${EMAIL:-admin@example.com}
+DOMAIN="birthday.bryars.com"
+EMAIL="bryars@hotmail.com"
 
 # Replace DOMAIN placeholder in nginx config
 sed -i "s/DOMAIN/$DOMAIN/g" /etc/nginx/conf.d/default.conf

@@ -50,7 +50,7 @@ body {
     padding-bottom: 40px;
 }
 
-/* BBC DANFAX Banner */
+/* BBC DANFEST Banner */
 .bbc-banner {
     background: var(--blue);
     padding: 8px 12px;
@@ -80,7 +80,7 @@ body {
     margin: 0;
 }
 
-.danfax-logo {
+.danfest-logo {
     font-size: 10px;
     line-height: 1;
     letter-spacing: 0;
@@ -569,7 +569,7 @@ a.cyan.link:hover {
         padding: 5px 8px;
     }
 
-    .bbc-logo, .danfax-logo {
+    .bbc-logo, .danfest-logo {
         font-size: 7px;
     }
 
@@ -632,7 +632,7 @@ a.cyan.link:hover {
         min-height: auto;
     }
 
-    .bbc-logo, .danfax-logo {
+    .bbc-logo, .danfest-logo {
         font-size: 6px;
     }
 

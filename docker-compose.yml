@@ -5,9 +5,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    environment:
-      - DOMAIN=your-domain.com
-      - EMAIL=your-email@example.com
     volumes:
       - letsencrypt:/etc/letsencrypt
     restart: unless-stopped
