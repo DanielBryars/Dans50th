@@ -1,12 +1,12 @@
 // CEEFAX Page Navigation System
 
 const pages = {
-    '500': '501.html',
-    '501': '501.html',
-    '502': '502.html',
-    '503': '503.html',
-    '504': '504.html',
-    '505': '505.html'
+    '500': 'page501.html',
+    '501': 'page501.html',
+    '502': 'page502.html',
+    '503': 'page503.html',
+    '504': 'page504.html',
+    '505': 'page505.html'
 };
 
 // Get current page number from the input
