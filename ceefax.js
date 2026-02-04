@@ -109,7 +109,7 @@ function handlePageClick(e) {
 }
 
 function copyEmail() {
-    navigator.clipboard.writeText('dans50th@bryars.com').then(function() {
+    navigator.clipboard.writeText('danfest@bryars.com').then(function() {
         const btn = document.querySelector('.copy-btn');
         btn.textContent = '✓';
         btn.classList.add('copied');
