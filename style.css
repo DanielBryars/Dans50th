@@ -924,8 +924,17 @@ a.cyan.link:hover {
 }
 
 @media (max-width: 400px) {
-    .tv-thumb {
+    .tv-listing .tv-thumb {
         display: none;
+    }
+
+    .tv-teaser-strip .tv-thumb {
+        width: 70px;
+    }
+
+    .tv-teaser-strip .tv-teaser-label {
+        font-size: 0.6em;
+        max-width: 70px;
     }
 
     .tv-time {
