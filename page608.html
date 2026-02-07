@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEEFAX 608 - ORACLE ITV Teletext</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="crt">
+        <div class="screen">
+            <!-- Header bar -->
+            <div class="header">
+                <div class="page-input-box">
+                    <span class="page-p">P</span><input type="text" id="page-input" maxlength="3" value="608" class="page-input"><span class="page-hint">&#x25C0;</span>
+                </div>
+                <span id="page-counter" class="page-counter">608</span>
+                <span class="header-date">Sat 08 Aug</span>
+                <span class="time" id="clock">00:00:00</span>
+            </div>
+
+            <!-- Deliberately different banner - this is ORACLE not CEEFAX! -->
+            <div class="oracle-banner">
+                <pre class="oracle-logo yellow">
+ ██████╗ ██████╗  █████╗  ██████╗██╗     ███████╗
+██╔═══██╗██╔══██╗██╔══██╗██╔════╝██║     ██╔════╝
+██║   ██║██████╔╝███████║██║     ██║     █████╗
+██║   ██║██╔══██╗██╔══██║██║     ██║     ██╔══╝
+╚██████╔╝██║  ██║██║  ██║╚██████╗███████╗███████╗
+ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚══════╝</pre>
+                <p class="oracle-subtitle white">ITV TELETEXT SERVICE</p>
+            </div>
+
+            <!-- Main content -->
+            <div class="content">
+                <!-- Double height title - deliberately garish -->
+                <div class="dbl-height-block red-bg">
+                    <span class="dbl-height yellow">ORACLE TV</span>
+                </div>
+
+                <div class="spacer"></div>
+
+                <div class="text-block center">
+                    <p><span class="yellow">&#x25A0;&#x25A0;&#x25A0; ITV LISTINGS &#x25A0;&#x25A0;&#x25A0;</span></p>
+                    <p><span class="white">Satruday 8th Augst</span></p>
+                    <p class="green small-text">(we can't even spell properly)</p>
+                </div>
+
+                <div class="divider">────────────────────────────────────────</div>
+
+                <!-- Deliberately messy formatting - it's ORACLE after all -->
+                <div class="tv-listings oracle-listings">
+                    <div class="tv-listing">
+                        <div class="tv-time yellow">9:00</div>
+                        <div class="tv-detail">
+                            <p class="tv-title white">THE ORACLE BREAKFAST HOUR</p>
+                            <p class="tv-desc green">We have presenters too you know.</p>
+                            <p class="tv-desc green">They're just...not as famous.</p>
+                        </div>
+                    </div>
+
+                    <div class="tv-listing">
+                        <div class="tv-time yellow">10:00</div>
+                        <div class="tv-detail">
+                            <p class="tv-title white">BETTER THAN CEEFAX: A DOCUMENTARY</p>
+                            <p class="tv-desc green">In which we prove conclusively</p>
+                            <p class="tv-desc green">that ORACLE is the superior</p>
+                            <p class="tv-desc green">teletext service. Evidence is</p>
+                            <p class="tv-desc green">somewhat lacking but we try.</p>
+                            <p class="tv-meta magenta">(Opinion) ★★☆☆☆</p>
+                        </div>
+                    </div>
+
+                    <div class="tv-listing">
+                        <div class="tv-time yellow">11:30</div>
+                        <div class="tv-detail">
+                            <p class="tv-title red blink">ADVERT BREAK</p>
+                            <p class="tv-desc green">Unlike the BBC we have adverts.</p>
+                            <p class="tv-desc green">Isn't that GREAT? Buy things!</p>
+                            <p class="tv-desc green">Call 0898 numbers for PRIZES!</p>
+                            <p class="tv-desc green">(calls cost 48p/min cheap rate)</p>
+                        </div>
+                    </div>
+
+                    <div class="tv-listing">
+                        <div class="tv-time yellow">12:00</div>
+                        <div class="tv-detail">
+                            <p class="tv-title white">ORACLE HOLIDAYS</p>
+                            <p class="tv-desc green">Benidorm from £99! Torremolinos</p>
+                            <p class="tv-desc green">from £149! Free child places!</p>
+                            <p class="tv-desc green">Book via PRESTEL or your local</p>
+                            <p class="tv-desc green">travel agent (ask for Sharon).</p>
+                        </div>
+                    </div>
+
+                    <div class="tv-listing">
+                        <div class="tv-time yellow">13:00</div>
+                        <div class="tv-detail">
+                            <p class="tv-title white">WHO IS DAN BRYARS?</p>
+                            <p class="tv-desc green">We heard the BBC are doing some</p>
+                            <p class="tv-desc green">big thing for his birthday. We</p>
+                            <p class="tv-desc green">weren't invited. That's fine.</p>
+                            <p class="tv-desc green">We're not bitter. Not at all.</p>
+                            <p class="tv-desc green">We're FINE.</p>
+                            <p class="tv-meta magenta">(Definitely Fine)</p>
+                        </div>
+                    </div>
+
+                    <div class="tv-listing">
+                        <div class="tv-time yellow">14:00</div>
+                        <div class="tv-detail">
+                            <p class="tv-title red blink">MORE ADVERTS</p>
+                            <p class="tv-desc green">Crazy prices at DFS! Sale must</p>
+                            <p class="tv-desc green">end Sunday! (It never does)</p>
+                        </div>
+                    </div>
+
+                    <div class="tv-listing">
+                        <div class="tv-time yellow">15:00</div>
+                        <div class="tv-detail">
+                            <p class="tv-title white">OUR GRAPHICS ARE JUST AS GOOD</p>
+                            <p class="tv-desc green">A presentation demonstrating that</p>
+                            <p class="tv-desc green">our teletext graphics are</p>
+                            <p class="tv-desc green">definitely as good as Ceefax's.</p>
+                            <p class="tv-desc yellow">[GRAPHICS FAILED TO LOAD]</p>
+                        </div>
+                    </div>
+
+                    <div class="tv-listing">
+                        <div class="tv-time yellow">17:00</div>
+                        <div class="tv-detail">
+                            <p class="tv-title white">BAMBOOZLE!</p>
+                            <p class="tv-desc green">Our famous interactive quiz! The</p>
+                            <p class="tv-desc green">one good thing we had. Press the</p>
+                            <p class="tv-desc green">coloured buttons on your remote.</p>
+                            <p class="tv-desc green">It was genuinely brilliant.</p>
+                            <p class="tv-meta magenta">(Quiz) ★★★★★</p>
+                        </div>
+                    </div>
+
+                    <div class="tv-listing">
+                        <div class="tv-time yellow">19:00</div>
+                        <div class="tv-detail">
+                            <p class="tv-title white">ORACLE NEWS</p>
+                            <p class="tv-desc green">Same news as Ceefax but with</p>
+                            <p class="tv-desc green">worse formatting and more adverts</p>
+                            <p class="tv-desc green">between paragraphs. Enjoy!</p>
+                        </div>
+                    </div>
+
+                    <div class="tv-listing">
+                        <div class="tv-time yellow">21:00</div>
+                        <div class="tv-detail">
+                            <p class="tv-title white">CLOSEDOWN</p>
+                            <p class="tv-desc green">ORACLE shuts down for the night</p>
+                            <p class="tv-desc green">because ITV can't be bothered to</p>
+                            <p class="tv-desc green">run teletext 24 hours. Switch to</p>
+                            <p class="tv-desc green">BBC for proper Ceefax instead.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider">────────────────────────────────────────</div>
+
+                <div class="text-block center">
+                    <p><span class="red">ORACLE</span><span class="white"> - a bit like Ceefax</span></p>
+                    <p><span class="white">but not as good since 1978</span></p>
+                </div>
+
+                <div class="spacer"></div>
+
+                <div class="text-block center">
+                    <p><span class="cyan small-text">For a proper teletext experience</span></p>
+                    <p><span class="cyan small-text">please return to </span><a href="page600.html" class="idx" style="border:none;padding:0"><span class="yellow">CEEFAX p600</span></a></p>
+                </div>
+
+                <div class="tagline">
+                    <span class="magenta">Dan's 50th:</span> <span class="white">The party at your fingertips</span>
+                </div>
+
+            </div>
+
+            <!-- Page index -->
+            <div class="page-index">
+                <span class="white">Channels:</span>
+                <a href="page600.html" class="idx">600</a>
+                <a href="page601.html" class="idx">601</a>
+                <a href="page602.html" class="idx">602</a>
+                <a href="page603.html" class="idx">603</a>
+                <a href="page604.html" class="idx">604</a>
+                <a href="page605.html" class="idx">605</a>
+                <a href="page606.html" class="idx">606</a>
+                <a href="page607.html" class="idx">607</a>
+                <a href="page608.html" class="idx active">608</a>
+            </div>
+
+            <!-- Fastext navigation -->
+            <div class="fastext">
+                <a href="page606.html" class="fastext-btn red-bg"><span class="fnum">606</span> Dan!</a>
+                <a href="page607.html" class="fastext-btn green-bg"><span class="fnum">607</span> Music</a>
+                <a href="page601.html" class="fastext-btn yellow-bg black-text"><span class="fnum">601</span> BBC1</a>
+                <a href="page600.html" class="fastext-btn cyan-bg black-text"><span class="fnum">600</span> Index</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="ceefax.js"></script>
+</body>
+</html>

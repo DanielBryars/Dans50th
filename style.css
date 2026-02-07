@@ -736,6 +736,190 @@ a.cyan.link:hover {
     }
 }
 
+/* TV Listings (600+ pages) */
+.tv-listings {
+    margin: 4px 0;
+}
+
+.tv-listing {
+    display: flex;
+    gap: 10px;
+    margin: 6px 0;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.tv-time {
+    flex-shrink: 0;
+    width: 50px;
+    font-weight: bold;
+    padding-top: 1px;
+}
+
+.tv-detail {
+    flex: 1;
+}
+
+.tv-title {
+    font-weight: bold;
+    margin: 0 0 2px 0;
+}
+
+.tv-desc {
+    margin: 1px 0;
+}
+
+.tv-meta {
+    margin: 2px 0 0 0;
+    font-size: 0.9em;
+}
+
+/* TV Guide Index (page 600) */
+.tv-index {
+    margin: 8px 0;
+}
+
+.tv-index-row {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    padding: 6px 8px;
+    margin: 3px 0;
+    text-decoration: none;
+    border: none;
+    background: rgba(255,255,255,0.03);
+}
+
+.tv-index-row:hover {
+    background: rgba(0,255,255,0.1);
+}
+
+.tv-idx-num {
+    flex-shrink: 0;
+    width: 30px;
+    font-weight: bold;
+}
+
+.tv-idx-desc {
+    flex: 1;
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+/* Chart list (page 607) */
+.chart-list {
+    margin: 4px 0;
+}
+
+.chart-entry {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 5px 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.chart-pos {
+    flex-shrink: 0;
+    width: 24px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.chart-move {
+    flex-shrink: 0;
+    width: 28px;
+    font-size: 0.85em;
+    text-align: center;
+}
+
+.chart-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.chart-title {
+    font-weight: bold;
+}
+
+.chart-artist {
+    font-size: 0.9em;
+}
+
+/* ORACLE banner (page 608) */
+.oracle-banner {
+    background: var(--red);
+    padding: 8px 12px;
+    text-align: center;
+}
+
+.oracle-logo {
+    font-size: 9px;
+    line-height: 1;
+    margin: 0 auto;
+}
+
+.oracle-subtitle {
+    font-size: 0.85em;
+    letter-spacing: 3px;
+    margin-top: 4px;
+}
+
+/* ORACLE deliberately worse styling */
+.oracle-listings .tv-time {
+    color: var(--yellow);
+}
+
+/* Responsive for TV listings */
+@media (max-width: 700px) {
+    .tv-listing {
+        gap: 6px;
+    }
+
+    .tv-time {
+        width: 42px;
+        font-size: 0.9em;
+    }
+
+    .tv-index-row {
+        padding: 5px 4px;
+        gap: 6px;
+    }
+
+    .tv-idx-desc {
+        display: none;
+    }
+
+    .chart-entry {
+        gap: 4px;
+    }
+
+    .oracle-logo {
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 400px) {
+    .tv-time {
+        width: 36px;
+        font-size: 0.85em;
+    }
+
+    .tv-desc {
+        font-size: 0.85em;
+    }
+
+    .chart-title, .chart-artist {
+        font-size: 0.85em;
+    }
+
+    .oracle-logo {
+        font-size: 5px;
+    }
+}
+
 /* Test Card F */
 .testcard-frame {
     background: #222;

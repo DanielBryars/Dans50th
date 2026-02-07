@@ -7,7 +7,16 @@ const pages = {
     '503': 'page503.html',
     '504': 'page504.html',
     '505': 'page505.html',
-    '506': 'page506.html'
+    '506': 'page506.html',
+    '600': 'page600.html',
+    '601': 'page601.html',
+    '602': 'page602.html',
+    '603': 'page603.html',
+    '604': 'page604.html',
+    '605': 'page605.html',
+    '606': 'page606.html',
+    '607': 'page607.html',
+    '608': 'page608.html'
 };
 
 // Get current page number from the input
@@ -59,7 +68,8 @@ function animateToPage(targetPage, callback) {
             return;
         }
 
-        counter.textContent = 500 + Math.floor(Math.random() * 100);
+        const base = Math.floor(target / 100) * 100;
+        counter.textContent = base + Math.floor(Math.random() * 100);
         i++;
         setTimeout(tick, 60);
     }
