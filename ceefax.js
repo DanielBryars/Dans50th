@@ -6,7 +6,8 @@ const pages = {
     '502': 'page502.html',
     '503': 'page503.html',
     '504': 'page504.html',
-    '505': 'page505.html'
+    '505': 'page505.html',
+    '506': 'page506.html'
 };
 
 // Get current page number from the input
@@ -23,7 +24,7 @@ function updateClock() {
 }
 
 // Page counter animation - shows in header
-// Annoyingly counts up to 600 then lands on target
+// Quick flicker through a few numbers then land on target
 function animateToPage(targetPage, callback) {
     const inputBox = document.querySelector('.page-input-box');
     const counter = document.getElementById('page-counter');
@@ -45,17 +46,12 @@ function animateToPage(targetPage, callback) {
     inputBox.style.display = 'none';
     counter.classList.add('active');
 
-    // Count from current up to 600
-    const totalSteps = 600 - currentPage;
-    const speed = Math.floor(3000 / totalSteps);
-
-    let current = currentPage;
+    // Flicker through 8 random-ish numbers then land on target
+    const steps = 8;
+    let i = 0;
 
     function tick() {
-        counter.textContent = current;
-
-        if (current >= 600) {
-            // Hit 600, now show target and go
+        if (i >= steps) {
             counter.textContent = target;
             setTimeout(() => {
                 callback();
@@ -63,8 +59,9 @@ function animateToPage(targetPage, callback) {
             return;
         }
 
-        current++;
-        setTimeout(tick, speed);
+        counter.textContent = 500 + Math.floor(Math.random() * 100);
+        i++;
+        setTimeout(tick, 60);
     }
 
     tick();
