@@ -15,8 +15,8 @@ const pages = {
     '604': 'page604.html',
     '605': 'page605.html',
     '606': 'page606.html',
-    '607': 'page607.html',
-    '608': 'page608.html'
+    '700': 'page700.html',
+    '800': 'page800.html'
 };
 
 // Get current page number from the input
