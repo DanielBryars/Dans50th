@@ -32,6 +32,35 @@ function updateClock() {
     if (clockEl) clockEl.textContent = time;
 }
 
+// Party kicks off Saturday 8th August 2026, 12 noon BST (UTC+1)
+const PARTY_DATE = new Date('2026-08-08T12:00:00+01:00');
+
+function updateCountdown() {
+    const cdEl = document.getElementById('countdown');
+    if (!cdEl) return;
+
+    const diff = PARTY_DATE - new Date();
+
+    if (diff <= 0) {
+        cdEl.innerHTML = '<span class="cd-live yellow blink">██ PARTY TIME ██</span>';
+        return;
+    }
+
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff / 3600000) % 24);
+    const mins = Math.floor((diff / 60000) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+
+    const set = (id, val, pad) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = String(val).padStart(pad, '0');
+    };
+    set('cd-days', days, 3);
+    set('cd-hours', hours, 2);
+    set('cd-mins', mins, 2);
+    set('cd-secs', secs, 2);
+}
+
 // Page counter animation - shows in header
 // Quick flicker through a few numbers then land on target
 function animateToPage(targetPage, callback) {
@@ -131,6 +160,9 @@ function copyEmail() {
 document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateClock, 1000);
     updateClock();
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
 
     // Page input listener
     const pageInput = document.getElementById('page-input');
